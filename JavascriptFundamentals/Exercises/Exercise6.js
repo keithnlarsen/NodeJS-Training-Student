@@ -1,7 +1,7 @@
 ﻿// Exercise 6 - Namespaces
 // ***********************
 
-// Shaw Namespace
+// Gridroad Namespace
 //***************************
 Gridroad = {};
 
@@ -35,4 +35,14 @@ Gridroad.DigitalPhone = Gridroad.Modem.extend( {
 // Docsis Constructor
 //***************************
 
-// Implement Docsis
+Gridroad.Docsis = Gridroad.Modem.extend( {
+  init: function ( rx, tx ) {
+    this.rx = rx || 1024;
+    this.tx = tx || 13942;
+    this._super();
+  },
+
+  ratio: function (){
+    return this.rx / this.tx;
+  }
+})

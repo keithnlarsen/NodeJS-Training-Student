@@ -75,7 +75,7 @@ var digitalPhoneTests = new JsUnitTest.Unit.Runner({
 var docsisTests = new JsUnitTest.Unit.Runner({
 	
 	setup: function() {
-		doc = Docsis(1038, 2393)
+		doc = Docsis(1038, 2393);
 	},
     
 	teardown: function() {

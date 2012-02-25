@@ -33,4 +33,13 @@ function DigitalPhone ( telephoneNumber ) {
 // Docsis Constructor
 //***************************
 
-// Implement Docsis object
+function Docsis ( rx, tx ) {
+  var that = object( Modem );
+  that.rx = rx || 1024;
+  that.tx = tx || 13942;
+
+  that.ratio = function () {
+    return this.rx / this.tx;
+  }
+  return that;
+}

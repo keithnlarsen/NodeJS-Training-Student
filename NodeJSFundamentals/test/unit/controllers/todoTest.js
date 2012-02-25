@@ -65,6 +65,36 @@ describe( 'nodejs-bootcamp.tests.unit.controllers.todo', function () {
     } );
   } );
 
+  describe( '.index(req, res, next)', function () {
+    it( 'should call next if and error is return', function ( done ) {
+
+      // Setup
+      var mockReq = {
+        body: todoJson,
+        params: {
+          id: 1
+        }
+      };
+      var mockRes = {
+        send: stub.sync()
+      };
+
+      var next = stub.sync( null );
+
+      var err = new Error( "test" );
+      mockTodoModel.findById = stub.async( err );
+
+      // Test
+      todoController.index( mockReq, mockRes, next );
+
+      // Verify
+      mockTodoModel.findById.called.withArguments( 1 );
+      next.called.withArguments( err );
+
+      done();
+    } );
+  } );
+
   describe( '.list(req, res, next)', function () {
     it( 'should call exec on the find query and send the response', function ( done ) {
 

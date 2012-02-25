@@ -27,7 +27,13 @@ DigitalPhone.formattedTn = function () {
 
 // Docsis Object
 //***************************
+var Docsis = object( Modem );
+Docsis.rx = "1024";
+Docsis.tx = "13942";
 
+Docsis.ratio = function () {
+  return this.rx / this.tx;
+}
 // Implement Docsis object from Modem
 // rx = "1024"
 // tx = "13942"

@@ -33,5 +33,9 @@ function Docsis ( rx, tx ) {
 }
 
 // Inherit from Modem
+Docsis.prototype = new Modem();
 
 // Implement ratio method that return the result of rx / tx;
+Docsis.prototype.ratio = function() {
+  return this.rx / this.tx;
+}

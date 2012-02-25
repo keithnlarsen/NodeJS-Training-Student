@@ -8,11 +8,22 @@ module.exports = ( function () {
   }
 
   function index ( req, res, next ) {
-    throw(new Error('Not Implemented'));
+    _todo.findById( req.params.id, function ( err, todo ) {
+      if (err) {
+        next(err);
+      }
+      else{
+        res.send( todo.toObject() );
+      }
+    } );
   }
 
   function list ( req, res, next ) {
-    throw(new Error('Not Implemented'));
+    _todo.find( {} ).exec( function ( err, todos ) {
+      res.send( todos.map( function ( todo ) {
+        return todo.toObject();
+      } ) );
+    } );
   }
 
   function insert ( req, res, next ) {

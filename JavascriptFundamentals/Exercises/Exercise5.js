@@ -31,4 +31,14 @@ var DigitalPhone = Modem.extend( {
 // Docsis Constructor
 //***************************
 
-// Implement Docsis
+var Docsis = Modem.extend( {
+  init: function ( rx, tx ) {
+    this.rx = rx || 1024;
+    this.tx = tx || 13942;
+    this._super();
+  },
+
+  ratio: function (){
+    return this.rx / this.tx;
+  }
+})

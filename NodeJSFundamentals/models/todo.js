@@ -13,7 +13,7 @@ module.exports = (function () {
       order: Number
     } );
 
-    _model = app.mongoose.model( 'Todo', _schema );
+    _model = app.mongoose.model( _name, _schema );
   }
 
   return {
