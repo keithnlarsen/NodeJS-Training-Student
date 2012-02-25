@@ -1,0 +1,36 @@
+{
+  "name": "NodeJS-Fundamentals",
+  "description": "NodeJS Fundamentals Example Todo Application",
+  "version": "1.0.0",
+  "private": true,
+  "author": [
+    {
+      "name": "Eric Kryski",
+      "email": "<eric@nodecalgary.com>"
+    },
+    {
+      "name": "Keith Larsen",
+      "email": "<keithlarsen@gridroad.com>"
+    }
+  ],
+  "engines": {
+    "node": "~0.6"
+  },
+  "dependencies": {
+    "express": ">=2.5.8",
+    "jade": ">=0.20.3",
+    "mongoose": ">=2.5.7"
+  },
+  "devDependencies": {
+    "mocha": ">=0.10.1",
+    "should": ">=0.5.1",
+    "stub.js": ">=1.0.2"
+  },
+  "config": {
+    "port": "3000"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "test": "make test"
+  }
+}
